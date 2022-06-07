@@ -1,0 +1,18 @@
+CREATE DATABASE `myapp` 
+ 
+CREATE TABLE `users` (
+  `Organizationid` int(11) NOT NULL,
+  `FirstName` varchar(50) NOT NULL,
+  `LastName` varchar(50) NOT NULL,
+  `EmailId` varchar(50) NOT NULL,
+  `Password` varchar(255) NOT NULL,
+  `OrganizationName` varchar(100) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+ 
+INSERT INTO `users` (`Organizationid`, `FirstName`, `LastName`, `EmailId`,'Password','OrganizationName') VALUES (1, 'test', 'test', 'test@test.com','passtext','test');
+ 
+ALTER TABLE `users` ADD PRIMARY KEY (`Organizationid`);
+ALTER TABLE `users` MODIFY `Organizationid` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+
+ALTER TABLE Persons
+ADD CONSTRAINT UC_user UNIQUE (Organizationid,OrganizationName);
